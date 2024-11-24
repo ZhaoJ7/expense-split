@@ -12,7 +12,7 @@ from src import solver
 @st.cache_data
 def _load_template_as_io_buffer(fp: str | Path = DATA_DIR / "template.xlsx"):
     buffer = io.BytesIO()
-    pd.read_excel(fp).to_excel(excel_writer=buffer)  # noqa
+    pd.read_excel(fp).to_excel(excel_writer=buffer, index=None)  # noqa
     return buffer
 
 
